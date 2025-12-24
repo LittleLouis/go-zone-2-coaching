@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="8Of0xgJZbPVn50JhOlPGriUfauwo9qFfpRFiE59hVXs" />
+    <title>Zone 2 Coaching - Coach Sportif Triathlon et Course à Pied | Bastien Guilbaud</title>
+    <meta name="description" content="Coach sportif spécialisé en triathlon et course à pied. Suivi personnalisé, plans d'entraînement sur mesure et optimisation des performances.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-text { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: #667eea; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        .popup-overlay.active { display: flex; }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .popup-container { animation: slideUp 0.3s ease; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <img src="img/logo.jpeg" alt="Logo Zone 2 Coaching" class="h-12 w-12 rounded-full object-cover">
+                    <span class="text-2xl font-bold gradient-text">Zone 2 Coaching</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#coaching" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Coaching</a>
+                    <a href="#suivi" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Suivi</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Services</a>
+                    <a href="#testimony" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Témoignages</a>
+                    <a href="#faq" class="nav-link text-gray-700 hover:text-purple-600 font-medium">FAQ</a>
+                </div>
+                <button class="gradient-bg text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg transition-all openPopupBtn">
+                    Me contacter
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="coaching" class="gradient-bg text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-5xl md:text-6xl font-bold leading-tight">Du sur-mesure pour progresser intelligemment</h1>
+                    <p class="text-xl text-purple-100 leading-relaxed">Que tu sois débutant ou athlète expérimenté, un suivi personnalisé fait souvent toute la différence. Passionné de physiologie, d'entraînement et de performance en course à pied et triathlon.</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:shadow-xl transition-all openPopupBtn">Commencer maintenant</button>
+                        <a href="#suivi" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition-all inline-block">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="img/le-coach.jpeg" alt="Bastien Guilbaud - Coach sportif" class="rounded-3xl shadow-2xl w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
+                        <div class="flex items-center space-x-3">
+                            <div class="text-4xl">🏆</div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-800">32</div>
+                                <div class="text-sm text-gray-600">Records personnels 2024</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🏆</div>
+                    <div class="text-4xl font-bold gradient-text">32</div>
+                    <div class="text-gray-600 mt-2">Records personnels en 2024</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🎯</div>
+                    <div class="text-4xl font-bold gradient-text">100%</div>
+                    <div class="text-gray-600 mt-2">Chance de PR la 1ère année</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🏁</div>
+                    <div class="text-4xl font-bold gradient-text">42</div>
+                    <div class="text-gray-600 mt-2">Courses en 2024</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl mb-3">🤝🏼</div>
+                    <div class="text-4xl font-bold gradient-text">14</div>
+                    <div class="text-gray-600 mt-2">Athlètes accompagnés</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="suivi" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Plans et Suivis Personnalisés</h2>
+                <p class="text-xl text-gray-600">Choisissez la formule qui vous correspond</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl shadow-lg p-8 card-hover border-2 border-transparent hover:border-purple-500">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Plan d'Entraînement</h3>
+                        <div class="text-5xl font-bold gradient-text">90€</div>
+                        <div class="text-gray-600 mt-2">par mois</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Évaluation initiale personnalisée</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Séances-test et zones d'entraînement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Échange téléphonique mensuel</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-300 mr-3 text-xl">✗</span>
+                            <span class="text-gray-400">Programme hebdomadaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-gray-300 mr-3 text-xl">✗</span>
+                            <span class="text-gray-400">Ajustements illimités</span>
+                        </li>
+                    </ul>
+                    <button class="w-full gradient-bg text-white py-4 rounded-full font-bold hover:shadow-xl transition-all openPopupBtn">
+                        Choisir ce plan
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-2xl p-8 card-hover border-4 border-purple-500 relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-purple-500 text-white px-6 py-2 rounded-full text-sm font-bold">
+                        POPULAIRE
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Suivi Personnalisé Gold</h3>
+                        <div class="text-5xl font-bold gradient-text">150€</div>
+                        <div class="text-gray-600 mt-2">par mois</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Tout du plan d'entraînement</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Programme hebdomadaire personnalisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Ajustements illimités</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Échanges illimités WhatsApp</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Retour hebdomadaire</span>
+                        </li>
+                    </ul>
+                    <button class="w-full gradient-bg text-white py-4 rounded-full font-bold hover:shadow-xl transition-all openPopupBtn">
+                        Choisir ce plan
+                    </button>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg p-8 card-hover border-2 border-transparent hover:border-purple-500">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Suivi Personnalisé Premium</h3>
+                        <div class="text-5xl font-bold gradient-text">190€</div>
+                        <div class="text-gray-600 mt-2">par mois</div>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Tout du suivi Gold</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Profilage physiologique au lactate</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Retour quotidien personnalisé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Échanges téléphoniques illimités</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✓</span>
+                            <span class="text-gray-700">Optimisation maximale</span>
+                        </li>
+                    </ul>
+                    <button class="w-full gradient-bg text-white py-4 rounded-full font-bold hover:shadow-xl transition-all openPopupBtn">
+                        Choisir ce plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimony" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Témoignages</h2>
+                <p class="text-xl text-gray-600">Ce que disent mes athlètes</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="img/testimony/Ben.png" alt="Benjamin B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Benjamin B.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-gray-900 mb-2">Objectif Norseman 2026</h5>
+                    <p class="text-gray-600 text-sm">Bastien m'entraîne depuis plusieurs mois maintenant, avec deux objectifs cette année : - Half de Aix en Provence sub 5h - Xtrem triathlon Blacklake (distance full, Qualif Norseman 2026) Bastien adapte parfaitement les séances et la charge d'entraînement à mon planning et à mes déplacements pro. Un vrai coach, au petit soin pour ses athlètes !</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="img/testimony/Arsene.jpg" alt="Arsène F." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Arsène F.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-gray-900 mb-2">Optimisation</h5>
+                    <p class="text-gray-600 text-sm">Bastien est un super entraîneur qui fait progresser. Il est à l'écoute et disponible pour ajuster les entraînements et fonction de la forme ou des contraintes familiales ou professionnelles. Il fait des bons retours sur la bonne exécution des entraînements pour maximiser le résultat. Avec lui j'ai fortement progressé en course à pied pour tomber sous les 1h30 sur semi et je suis beaucoup plus performant à vélo alors que c'est mon sport à la base.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="img/testimony/Clemence.jpg" alt="Clémence L." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Clémence L.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-gray-900 mb-2">Individualisation</h5>
+                    <p class="text-gray-600 text-sm">Je suis coachée par Bastien depuis septembre 2023. Je n'ai fait que progresser de par la régularité dans ma pratique mais aussi parce que tout a toujours été adapté (allures/récupérations/volume selon la période). J'apprécie beaucoup aussi les échanges que nous avons avant/après certaines séances clés.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="img/testimony/Romain.jpg" alt="Romain B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Romain B.</h4>
+                            <div class="text-yellow-400">★★★★★</div>
+                        </div>
+                    </div>
+                    <h5 class="font-bold text-gray-900 mb-2">Écoute et Pédagogie</h5>
+                    <p class="text-gray-600 text-sm">Bastien est un super coach! Il est à l'écoute et compétent. Grâce à lui, j'ai atteint mes objectifs et j'ai développé ma culture de l'entraînement. Il m'implique dans le processus et je comprends enfin ce que je fais à l'entraînement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Autres Services</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-lg">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Test Physiologique au Lactate</h3>
+                    <ul class="space-y-3 mb-6 text-gray-700">
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span> Détermination des seuils LT1 et LT2</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span> Cadrage des zones d'entraînement</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span> Profil physiologique complet</li>
+                        <li class="flex items-start"><span class="text-purple-500 mr-2">•</span> Dossier bilan fourni</li>
+                    </ul>
+                    <div class="text-3xl font-bold gradient-text mb-2">150€</div>
+                    <div class="text-sm text-gray-600">-10% pour 2 / -20% pour 3</div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-lg opacity-60">
+                    <div class="text-5xl mb-4">🧠</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Préparation Mentale</h3>
+                    <div class="text-purple-500 font-semibold">À venir prochainement...</div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 card-hover shadow-lg opacity-60">
+                    <div class="text-5xl mb-4">🥗</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Accompagnement Nutritionnel</h3>
+                    <div class="text-purple-500 font-semibold">À venir prochainement...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section id="carousel" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Performances des athlètes coachés</h2>
+            </div>
+
+            <div class="relative">
+                <!-- Loading State -->
+                <div id="carousel-loading" class="text-center py-20">
+                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
+                    <p class="mt-4 text-gray-600">Chargement des images...</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="carousel-error" class="text-center py-20 hidden">
+                    <div class="text-red-500 text-xl">❌ Erreur lors du chargement des images</div>
+                </div>
+
+                <!-- Carousel Container -->
+                <div id="carousel-wrapper" class="hidden">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <!-- Carousel Track -->
+                        <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                            <!-- Les images seront ajoutées ici dynamiquement -->
+                        </div>
+                    </div>
+
+                    <!-- Navigation Arrows -->
+                    <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Indicators -->
+                    <div id="carousel-indicators" class="flex justify-center gap-2 mt-6">
+                        <!-- Les indicateurs seront ajoutés ici dynamiquement -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Questions Fréquentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-all">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Par où commencer avec un coach sportif ?</summary>
+                    <p class="mt-4 text-gray-700 leading-relaxed">Il suffit de me contacter par mail en me laissant tes coordonnées et tes disponibilités. Nous ferons alors connaissance pour définir les objectifs en fonction de ton expérience, de tes contraintes et de tes envies.</p>
+                </details>
+
+                <details class="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-all">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Quels sont les tarifs du coaching sportif ?</summary>
+                    <p class="mt-4 text-gray-700 leading-relaxed">Je propose trois formules : Plan d'entraînement (90€/mois), Suivi Gold (150€/mois), et Suivi Premium (190€/mois). Le test physiologique au lactate est à 150€.</p>
+                </details>
+
+                <details class="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-all">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Faut-il un niveau minimum pour être coaché ?</summary>
+                    <p class="mt-4 text-gray-700 leading-relaxed">Absolument pas ! Mes programmes sont adaptés à tous les niveaux, du débutant complet au sportif confirmé. L'important est ta motivation et ta régularité.</p>
+                </details>
+
+                <details class="bg-white rounded-2xl p-6 cursor-pointer hover:shadow-md transition-all">
+                    <summary class="font-bold text-lg text-gray-900 cursor-pointer">Où se déroulent les séances d'entraînement ?</summary>
+                    <p class="mt-4 text-gray-700 leading-relaxed">Où tu veux ! Tu auras ton planning sur Nolio, automatiquement synchronisé dans ta montre GPS et ton compteur vélo pour suivre les exercices à la bonne intensité.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Prêt à atteindre vos objectifs ?</h2>
+            <p class="text-xl text-purple-100 mb-8">Contactez-moi pour une première évaluation gratuite et commençons votre transformation sportive ensemble.</p>
+            <button class="bg-white text-purple-600 px-12 py-5 rounded-full font-bold text-lg hover:shadow-2xl transition-all openPopupBtn">
+                Me contacter maintenant
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Popup -->
+    <div id="contactPopup" class="popup-overlay">
+        <div class="popup-container bg-white rounded-3xl shadow-2xl max-w-md w-full mx-4 overflow-hidden">
+            <div class="gradient-bg p-6 flex justify-between items-center">
+                <h3 class="text-2xl font-bold text-white">Contactez-moi</h3>
+                <button class="close-popup text-white text-3xl hover:text-gray-200 transition-colors leading-none">&times;</button>
+            </div>
+            <form id="contactForm" class="p-8" onsubmit="return false;">
+                <div class="space-y-5">
+                    <div class="form-group">
+                        <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nom</label>
+                        <input type="text" id="name" name="name" required 
+                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors">
+                    </div>
+                    <div class="form-group">
+                        <label for="surname" class="block text-sm font-semibold text-gray-700 mb-2">Prénom</label>
+                        <input type="text" id="surname" name="surname" required 
+                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Adresse mail</label>
+                        <input type="email" id="email" name="email" required 
+                               class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors resize-none"></textarea>
+                    </div>
+                </div>
+                <div class="form-actions flex gap-4 mt-8">
+                    <button type="button" class="btn-cancel flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
+                        Annuler
+                    </button>
+                    <button type="button" onclick="sendEmailRequest()" class="btn-submit flex-1 px-6 py-3 gradient-bg text-white rounded-xl font-semibold hover:shadow-lg transition-all">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Gestion du popup
+        const popup = document.getElementById('contactPopup');
+        const openBtns = document.querySelectorAll('.openPopupBtn');
+        const closeBtn = document.querySelector('.close-popup');
+        const cancelBtn = document.querySelector('.btn-cancel');
+
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                popup.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+
+        cancelBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    
+        // Envoi de mail
+        window.sendEmailRequest = function sendEmailRequest() {
+            const name = document.getElementById("name").value.trim();
+            const surname = document.getElementById("surname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            // Ajouter un indicateur visuel que la requête est en cours (optionnel)
+            const submitBtn = document.querySelector(".btn-submit");
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Envoi en cours...';
+
+            fetch('/sendmail', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({name: name, surname: surname, email:email, message: message})
+                }).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                }).then(data => {
+                        console.log("Email envoyé avec succès:", data);
+                        document.getElementById("contactPopup").style.display = 'none';
+                        document.body.style.overflow = 'auto';
+
+                        alert("Email envoyé avec succès !");
+                        document.getElementById("contactForm").reset();
+                    })
+                    .catch(error => {
+                        console.error("Erreur lors de l'envoi:", error);
+                        alert("Une erreur s'est produite lors de l'envoi du message.");
+                    })
+                    .finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Envoyer';
+            });
+        }
+
+        // CAROUSEL
+        let currentSlide = 0;
+        let totalSlides = 0;
+        let carouselImages = [];
+
+        const carouselTrack = document.getElementById('carousel-track');
+        const carouselWrapper = document.getElementById('carousel-wrapper');
+        const carouselLoading = document.getElementById('carousel-loading');
+        const carouselError = document.getElementById('carousel-error');
+        const carouselIndicators = document.getElementById('carousel-indicators');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+
+        async function fetchImagesFromAPI() {
+            try {
+                const response = await fetch('/getcarrouselimages');
+                if (!response.ok) throw new Error('Erreur lors de la récupération des images');
+                return await response.json();
+            } catch (error) {
+                console.error('Erreur:', error);
+                throw error;
+            }
+        }
+
+        function createCarouselSlides(images) {
+            carouselImages = images;
+            totalSlides = images.length;
+
+            images.forEach((image, index) => {
+                const slide = document.createElement('div');
+                slide.className = 'min-w-full flex-shrink-0 px-2';
+                slide.innerHTML = `
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100 aspect-video">
+                        <img src="./${image.path}" 
+                             alt="${image.name}" 
+                             class="w-full h-full object-contain"
+                             loading="lazy">
+                    </div>
+                `;
+                carouselTrack.appendChild(slide);
+            });
+
+            images.forEach((_, index) => {
+                const indicator = document.createElement('button');
+                indicator.className = `h-2 rounded-full transition-all ${index === 0 ? 'w-8 bg-purple-600' : 'w-2 bg-gray-300'}`;
+                indicator.addEventListener('click', () => goToSlide(index));
+                carouselIndicators.appendChild(indicator);
+            });
+
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentSlide * 100;
+            carouselTrack.style.transform = `translateX(${offset}%)`;
+
+            const indicators = carouselIndicators.children;
+            Array.from(indicators).forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.className = 'h-2 w-8 rounded-full bg-purple-600 transition-all';
+                } else {
+                    indicator.className = 'h-2 w-2 rounded-full bg-gray-300 transition-all';
+                }
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        });
+
+        let autoplayInterval;
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+            }, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+        carouselWrapper.addEventListener('mouseleave', startAutoplay);
+
+        async function initCarousel() {
+            try {
+                const images = await fetchImagesFromAPI();
+                
+                if (!images || images.length === 0) {
+                    throw new Error('Aucune image trouvée');
+                }
+
+                carouselLoading.style.display = 'none';
+                carouselWrapper.classList.remove('hidden');
+                
+                createCarouselSlides(images);
+                startAutoplay();
+                
+            } catch (error) {
+                carouselLoading.style.display = 'none';
+                carouselError.classList.remove('hidden');
+                carouselError.querySelector('div').textContent = '❌ ' + error.message;
+            }
+        }
+
+        initCarousel();
+    </script>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Zone 2 Coaching</h3>
+                    <p class="text-gray-400">Coach sportif spécialisé en triathlon et course à pied.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Liens rapides</h3>
+                    <div class="space-y-2">
+                        <a href="#coaching" class="block text-gray-400 hover:text-white transition-colors">Coaching</a>
+                        <a href="#suivi" class="block text-gray-400 hover:text-white transition-colors">Suivi</a>
+                        <a href="#services" class="block text-gray-400 hover:text-white transition-colors">Services</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Suivez-moi</h3>
+                    <div class="space-y-2">
+                        <a href="https://www.facebook.com/Zone2CoachingBastienGuilbaud" class="block text-gray-400 hover:text-white transition-colors">Facebook</a>
+                        <a href="https://www.instagram.com/zone_2_coaching/" class="block text-gray-400 hover:text-white transition-colors">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Zone 2 Coaching - Bastien Guilbaud. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
