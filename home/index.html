@@ -248,50 +248,50 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="img/testimony/Ben.png" alt="Benjamin B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="components/testimony/imgs/Ben.png" alt="Benjamin B." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Benjamin B.</h4>
                             <div class="text-yellow-400">★★★★★</div>
                         </div>
                     </div>
                     <h5 class="font-bold text-gray-900 mb-2">Objectif Norseman 2026</h5>
-                    <p class="text-gray-600 text-sm">Bastien m'entraîne depuis plusieurs mois maintenant, avec deux objectifs cette année : - Half de Aix en Provence sub 5h - Xtrem triathlon Blacklake (distance full, Qualif Norseman 2026) Bastien adapte parfaitement les séances et la charge d'entraînement à mon planning et à mes déplacements pro. Un vrai coach, au petit soin pour ses athlètes !</p>
+                    <p class="text-gray-600 text-sm">Bastien adapte parfaitement les séances et la charge d'entraînement à mon planning et à mes déplacements pro. Un vrai coach, au petit soin pour ses athlètes !</p>
                 </div>
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="img/testimony/Arsene.jpg" alt="Arsène F." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="components/testimony/imgs/Arsene.jpg" alt="Arsène F." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Arsène F.</h4>
                             <div class="text-yellow-400">★★★★★</div>
                         </div>
                     </div>
                     <h5 class="font-bold text-gray-900 mb-2">Optimisation</h5>
-                    <p class="text-gray-600 text-sm">Bastien est un super entraîneur qui fait progresser. Il est à l'écoute et disponible pour ajuster les entraînements et fonction de la forme ou des contraintes familiales ou professionnelles. Il fait des bons retours sur la bonne exécution des entraînements pour maximiser le résultat. Avec lui j'ai fortement progressé en course à pied pour tomber sous les 1h30 sur semi et je suis beaucoup plus performant à vélo alors que c'est mon sport à la base.</p>
+                    <p class="text-gray-600 text-sm">Bastien est un super entraîneur qui fait progresser. Avec lui j'ai fortement progressé en course à pied pour tomber sous les 1h30 sur semi.</p>
                 </div>
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="img/testimony/Clemence.jpg" alt="Clémence L." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="components/testimony/imgs/Clemence.jpg" alt="Clémence L." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Clémence L.</h4>
                             <div class="text-yellow-400">★★★★★</div>
                         </div>
                     </div>
                     <h5 class="font-bold text-gray-900 mb-2">Individualisation</h5>
-                    <p class="text-gray-600 text-sm">Je suis coachée par Bastien depuis septembre 2023. Je n'ai fait que progresser de par la régularité dans ma pratique mais aussi parce que tout a toujours été adapté (allures/récupérations/volume selon la période). J'apprécie beaucoup aussi les échanges que nous avons avant/après certaines séances clés.</p>
+                    <p class="text-gray-600 text-sm">Je n'ai fait que progresser de par la régularité dans ma pratique mais aussi parce que tout a toujours été adapté selon la période.</p>
                 </div>
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="img/testimony/Romain.jpg" alt="Romain B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="components/testimony/imgs/Romain.jpg" alt="Romain B." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Romain B.</h4>
                             <div class="text-yellow-400">★★★★★</div>
                         </div>
                     </div>
                     <h5 class="font-bold text-gray-900 mb-2">Écoute et Pédagogie</h5>
-                    <p class="text-gray-600 text-sm">Bastien est un super coach! Il est à l'écoute et compétent. Grâce à lui, j'ai atteint mes objectifs et j'ai développé ma culture de l'entraînement. Il m'implique dans le processus et je comprends enfin ce que je fais à l'entraînement.</p>
+                    <p class="text-gray-600 text-sm">Grâce à lui, j'ai atteint mes objectifs et j'ai développé ma culture de l'entraînement. Je comprends enfin ce que je fais !</p>
                 </div>
             </div>
         </div>
@@ -354,20 +354,20 @@
 
                 <!-- Carousel Container -->
                 <div id="carousel-wrapper" class="hidden">
-                    <div class="relative overflow-hidden rounded-2xl">
+                    <div class="relative overflow-hidden rounded-2xl touch-pan-y">
                         <!-- Carousel Track -->
-                        <div id="carousel-track" class="flex transition-transform duration-500 ease-out">
+                        <div id="carousel-track" class="flex transition-transform duration-500 ease-out touch-action-pan-y">
                             <!-- Les images seront ajoutées ici dynamiquement -->
                         </div>
                     </div>
 
-                    <!-- Navigation Arrows -->
-                    <button id="carousel-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
+                    <!-- Navigation Arrows (hidden on mobile) -->
+                    <button id="carousel-prev" class="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <button id="carousel-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
+                    <button id="carousel-next" class="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -503,52 +503,13 @@
                 }
             });
         });
-    
-        // Envoi de mail
-        window.sendEmailRequest = function sendEmailRequest() {
-            const name = document.getElementById("name").value.trim();
-            const surname = document.getElementById("surname").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            // Ajouter un indicateur visuel que la requête est en cours (optionnel)
-            const submitBtn = document.querySelector(".btn-submit");
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Envoi en cours...';
-
-            fetch('/sendmail', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({name: name, surname: surname, email:email, message: message})
-                }).then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                }).then(data => {
-                        console.log("Email envoyé avec succès:", data);
-                        document.getElementById("contactPopup").style.display = 'none';
-                        document.body.style.overflow = 'auto';
-
-                        alert("Email envoyé avec succès !");
-                        document.getElementById("contactForm").reset();
-                    })
-                    .catch(error => {
-                        console.error("Erreur lors de l'envoi:", error);
-                        alert("Une erreur s'est produite lors de l'envoi du message.");
-                    })
-                    .finally(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Envoyer';
-            });
-        }
 
         // CAROUSEL
         let currentSlide = 0;
         let totalSlides = 0;
         let carouselImages = [];
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         const carouselTrack = document.getElementById('carousel-track');
         const carouselWrapper = document.getElementById('carousel-wrapper');
@@ -577,7 +538,7 @@
                 const slide = document.createElement('div');
                 slide.className = 'min-w-full flex-shrink-0 px-2';
                 slide.innerHTML = `
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100 aspect-video">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100" style="aspect-ratio: 16/9;">
                         <img src="./${image.path}" 
                              alt="${image.name}" 
                              class="w-full h-full object-contain"
@@ -594,7 +555,37 @@
                 carouselIndicators.appendChild(indicator);
             });
 
+            setupTouchEvents();
             updateCarousel();
+        }
+
+        function setupTouchEvents() {
+            carouselTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoplay();
+            }, { passive: true });
+
+            carouselTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startAutoplay();
+            }, { passive: true });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                } else {
+                    // Swipe right - prev
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                }
+                updateCarousel();
+            }
         }
 
         function goToSlide(index) {
@@ -628,6 +619,7 @@
 
         let autoplayInterval;
         function startAutoplay() {
+            stopAutoplay();
             autoplayInterval = setInterval(() => {
                 currentSlide = (currentSlide + 1) % totalSlides;
                 updateCarousel();
@@ -635,11 +627,16 @@
         }
 
         function stopAutoplay() {
-            clearInterval(autoplayInterval);
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+            }
         }
 
-        carouselWrapper.addEventListener('mouseenter', stopAutoplay);
-        carouselWrapper.addEventListener('mouseleave', startAutoplay);
+        // Desktop hover events
+        if (window.matchMedia('(hover: hover)').matches) {
+            carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+            carouselWrapper.addEventListener('mouseleave', startAutoplay);
+        }
 
         async function initCarousel() {
             try {
