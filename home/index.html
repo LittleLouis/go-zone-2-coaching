@@ -7,6 +7,8 @@
     <title>Zone 2 Coaching - Coach Sportif Triathlon et Course à Pied | Bastien Guilbaud</title>
     <meta name="description" content="Coach sportif spécialisé en triathlon et course à pied. Suivi personnalisé, plans d'entraînement sur mesure et optimisation des performances.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./components/carrousel.js" type="module"></script>
+    <script src="./components/popup.js" type="module"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         body { font-family: 'Inter', sans-serif; }
@@ -81,7 +83,7 @@
                 </div>
                 <div class="relative">
                     <img src="img/le-coach.jpeg" alt="Bastien Guilbaud - Coach sportif" class="rounded-3xl shadow-2xl w-full">
-                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
+                    <div class="absolute -bottom-6 -left-3 bg-white rounded-2xl p-6 shadow-xl">
                         <div class="flex items-center space-x-3">
                             <div class="text-4xl">🏁</div>
                             <div>
@@ -246,7 +248,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="components/testimony/imgs/Ben.png" alt="Benjamin B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="img/testimony/Ben.png" alt="Benjamin B." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Benjamin B.</h4>
                             <div class="text-yellow-400">★★★★★</div>
@@ -258,7 +260,7 @@
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="components/testimony/imgs/Arsene.jpg" alt="Arsène F." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="img/testimony/Arsene.jpg" alt="Arsène F." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Arsène F.</h4>
                             <div class="text-yellow-400">★★★★★</div>
@@ -270,7 +272,7 @@
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="components/testimony/imgs/Clemence.jpg" alt="Clémence L." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="img/testimony/Clemence.jpg" alt="Clémence L." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Clémence L.</h4>
                             <div class="text-yellow-400">★★★★★</div>
@@ -282,7 +284,7 @@
 
                 <div class="bg-gray-50 rounded-2xl p-6 card-hover">
                     <div class="flex items-center mb-4">
-                        <img src="components/testimony/imgs/Romain.jpg" alt="Romain B." class="w-16 h-16 rounded-full object-cover mr-4">
+                        <img src="img/testimony/Romain.jpg" alt="Romain B." class="w-16 h-16 rounded-full object-cover mr-4">
                         <div>
                             <h4 class="font-bold text-gray-900">Romain B.</h4>
                             <div class="text-yellow-400">★★★★★</div>
@@ -331,54 +333,31 @@
         </div>
     </section>
 
-    <!-- Carousel Section -->
-    <section id="carousel" class="py-8 bg-white">
-        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Performances des athlètes coachés</h2>
-            </div>
-
-            <div class="relative">
-                <!-- Loading State -->
-                <div id="carousel-loading" class="text-center py-20">
-                    <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600"></div>
-                    <p class="mt-4 text-gray-600">Chargement des images...</p>
-                </div>
-
-                <!-- Error State -->
-                <div id="carousel-error" class="text-center py-20 hidden">
-                    <div class="text-red-500 text-xl">❌ Erreur lors du chargement des images</div>
-                </div>
-
-                <!-- Carousel Container -->
-                <div id="carousel-wrapper" class="hidden">
-                    <div class="relative overflow-hidden rounded-2xl touch-pan-y">
-                        <!-- Carousel Track -->
-                        <div id="carousel-track" class="flex transition-transform duration-500 ease-out touch-action-pan-y">
-                            <!-- Les images seront ajoutées ici dynamiquement -->
-                        </div>
+    <section id="carousel" class="py-16 bg-white">
+            <div id="carousel-wrapper" class="max-w-4xl mx-auto">
+                <div class="relative overflow-hidden rounded-xl touch-pan-y">
+                    <div id="carousel-track" class="relative h-[400px] w-full overflow-hidden rounded-xl">
+                        <!-- Les images seront ajoutées ici dynamiquement -->
                     </div>
-
-                    <!-- Navigation Arrows (hidden on mobile) -->
-                    <button id="carousel-prev" class="hidden md:block absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    
+                    <!-- Nav button -->
+                    <button id="carousel-prev" class="hidden md:block absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all hover:scale-110 z-10">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <button id="carousel-next" class="hidden md:block absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-4 shadow-lg transition-all hover:scale-110 z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="carousel-next" class="hidden md:block absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 rounded-full p-3 shadow-lg transition-all hover:scale-110 z-10">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
-
-                    <!-- Indicators -->
-                    <div id="carousel-indicators" class="flex justify-center gap-2 mt-6">
+                    
+                    <div id="carousel-indicators" class="flex justify-center gap-2 mt-4">
                         <!-- Les indicateurs seront ajoutés ici dynamiquement -->
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+    </section>       
 
     <!-- FAQ -->
     <section id="faq" class="py-20 bg-gray-50">
@@ -463,202 +442,6 @@
             </form>
         </div>
     </div>
-
-    <script>
-        // Gestion du popup
-        const popup = document.getElementById('contactPopup');
-        const openBtns = document.querySelectorAll('.openPopupBtn');
-        const closeBtn = document.querySelector('.close-popup');
-        const cancelBtn = document.querySelector('.btn-cancel');
-
-        openBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                popup.classList.add('active');
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            popup.classList.remove('active');
-        });
-
-        cancelBtn.addEventListener('click', () => {
-            popup.classList.remove('active');
-        });
-
-        popup.addEventListener('click', (e) => {
-            if (e.target === popup) {
-                popup.classList.remove('active');
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // CAROUSEL
-        let currentSlide = 0;
-        let totalSlides = 0;
-        let carouselImages = [];
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        const carouselTrack = document.getElementById('carousel-track');
-        const carouselWrapper = document.getElementById('carousel-wrapper');
-        const carouselLoading = document.getElementById('carousel-loading');
-        const carouselError = document.getElementById('carousel-error');
-        const carouselIndicators = document.getElementById('carousel-indicators');
-        const prevBtn = document.getElementById('carousel-prev');
-        const nextBtn = document.getElementById('carousel-next');
-
-        async function fetchImagesFromAPI() {
-            try {
-                const response = await fetch('/getcarrouselimages');
-                if (!response.ok) throw new Error('Erreur lors de la récupération des images');
-                return await response.json();
-            } catch (error) {
-                console.error('Erreur:', error);
-                throw error;
-            }
-        }
-
-        function createCarouselSlides(images) {
-            carouselImages = images;
-            totalSlides = images.length;
-
-            images.forEach((image, index) => {
-                const slide = document.createElement('div');
-                slide.className = 'min-w-full flex-shrink-0 px-2';
-                slide.innerHTML = `
-                    <div class="relative rounded-2xl overflow-hidden shadow-xl bg-gray-100" style="aspect-ratio: 16/9;">
-                        <img src="./${image.path}" 
-                             alt="${image.name}" 
-                             class="w-full h-full object-contain"
-                             loading="lazy">
-                    </div>
-                `;
-                carouselTrack.appendChild(slide);
-            });
-
-            images.forEach((_, index) => {
-                const indicator = document.createElement('button');
-                indicator.className = `h-2 rounded-full transition-all ${index === 0 ? 'w-8 bg-purple-600' : 'w-2 bg-gray-300'}`;
-                indicator.addEventListener('click', () => goToSlide(index));
-                carouselIndicators.appendChild(indicator);
-            });
-
-            setupTouchEvents();
-            updateCarousel();
-        }
-
-        function setupTouchEvents() {
-            carouselTrack.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                stopAutoplay();
-            }, { passive: true });
-
-            carouselTrack.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startAutoplay();
-            }, { passive: true });
-        }
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    // Swipe left - next
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                } else {
-                    // Swipe right - prev
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                }
-                updateCarousel();
-            }
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateCarousel();
-        }
-
-        function updateCarousel() {
-            const offset = -currentSlide * 100;
-            carouselTrack.style.transform = `translateX(${offset}%)`;
-
-            const indicators = carouselIndicators.children;
-            Array.from(indicators).forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.className = 'h-2 w-8 rounded-full bg-purple-600 transition-all';
-                } else {
-                    indicator.className = 'h-2 w-2 rounded-full bg-gray-300 transition-all';
-                }
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        });
-
-        let autoplayInterval;
-        function startAutoplay() {
-            stopAutoplay();
-            autoplayInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateCarousel();
-            }, 5000);
-        }
-
-        function stopAutoplay() {
-            if (autoplayInterval) {
-                clearInterval(autoplayInterval);
-            }
-        }
-
-        // Desktop hover events
-        if (window.matchMedia('(hover: hover)').matches) {
-            carouselWrapper.addEventListener('mouseenter', stopAutoplay);
-            carouselWrapper.addEventListener('mouseleave', startAutoplay);
-        }
-
-        async function initCarousel() {
-            try {
-                const images = await fetchImagesFromAPI();
-                
-                if (!images || images.length === 0) {
-                    throw new Error('Aucune image trouvée');
-                }
-
-                carouselLoading.style.display = 'none';
-                carouselWrapper.classList.remove('hidden');
-                
-                createCarouselSlides(images);
-                startAutoplay();
-                
-            } catch (error) {
-                carouselLoading.style.display = 'none';
-                carouselError.classList.remove('hidden');
-                carouselError.querySelector('div').textContent = '❌ ' + error.message;
-            }
-        }
-
-        initCarousel();
-    </script>
 
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
